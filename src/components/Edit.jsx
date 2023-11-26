@@ -4,9 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Update,Get } from "../services/allAPI";
+import { Update, Get } from "../services/allAPI";
+
 function Edit() {
-    // const[data, setData] = useState([])
+    
     const { id } = useParams();
     const [values, setValues] = useState({
         id: '',

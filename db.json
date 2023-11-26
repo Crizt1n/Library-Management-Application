@@ -1,0 +1,20 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "imageurl": "https://isbncoverdb.com/images/book-cover-atomic-habits-1770005.webp",
+      "title": "Atomic Habit",
+      "year": "2022",
+      "language": "English",
+      "author": "cliff"
+    },
+    {
+      "id": 2,
+      "imageurl": "https://isbncoverdb.com/images/book-cover-the-astrological-moon.webp",
+      "title": "The Astrological Moon",
+      "year": "2017",
+      "language": "English",
+      "author": "Darby"
+    }
+  ]
+}
