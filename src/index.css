@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.edit-del {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card img {
+    height: 250px;
+}
+.row-div {
+    border-radius: 20px;
+    border: 1px solid #DBDBDB;
+}
+.row-col {
+    width: 100%;
+}
+.label-name{
+    color: red;
+    display: none;
+}
+.label-num{
+    color: red;
+    display: none;
+}
+.label-num-less{
+    color: red;
+    display: none;
+}
+.label-lag{
+    color: red;
+        display: none;
+}
+.label-author{
+    color: red;
+        display: none;
+}
+.label-id{
+    color: red;
+    display: none;
+}
