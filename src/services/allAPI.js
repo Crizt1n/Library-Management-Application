@@ -12,4 +12,9 @@ export const Get = async (id) => {
 }
 
 export const GetAll = async () => {
-    return await commonAPI('GET', `${serverURL}books`);}
+    return await commonAPI('GET', `${serverURL}books`);
+}
+
+export const uploadNewBook = async(reqBody)=>{
+return await commonAPI('POST',`${serverURL}books`,reqBody)
+}
