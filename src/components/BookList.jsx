@@ -51,18 +51,18 @@ function BookList() {
   
     const[book,addbook]=useState({
       id:"",
-      url:"",
-      name:"",
+      imageurl:"",
+      title:"",
       year:"",
-      lang:"",
+      language:"",
       author:""
   
     })
        console.log(book);
   
     const handleUpload =async ()=>{
-      const {id,url,name,year,lang,author} = book
-      if(!id || !url || !name || !year || !lang ||!author){
+      const { id, imageurl, title, year, language, author } = book
+      if (!id || !imageurl || !title || !year || !language || !author){
         // toast.warning
         toast.warning('please fill the form completely')
       }
@@ -71,7 +71,7 @@ function BookList() {
          console.log(response);
          if(response.status>=200 && response.status<300){
           // toast.success
-          toast.success(`${response.data.name} Book has been successfully Uploaded`)
+           toast.success(`${response.data.title} Book has been successfully Uploaded`)
           //to close the modal
           // setUploadVideoStatus(response.data)
           handleClose()
@@ -108,24 +108,24 @@ function BookList() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control type="text" placeholder="Enter the image URL"   onChange={(e)=>addbook({...book,url:e.target.value})}/>
+                  <Form.Control type="text" placeholder="Enter the image URL" onChange={(e) => addbook({ ...book,imageurl:e.target.value})}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control type="text" placeholder="Enter the Name"   onChange={(e)=>addbook({...book,name:e.target.value})}/>
+                  <Form.Control type="text" placeholder="Enter the Name" onChange={(e) => addbook({ ...book,title:e.target.value})}/>
         </Form.Group>
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control type="text" placeholder="Enter the Year of Book"   onChange={(e)=>addbook({...book,year:e.target.value})}/>
+                  <Form.Control type="text" placeholder="Enter the Year of Book" onChange={(e) => addbook({ ...book, year:e.target.value})}/>
         </Form.Group>
 
       
         <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control type="text" placeholder="Enter the Language"  onChange={(e)=>addbook({...book,lang:e.target.value})}/>
+                  <Form.Control type="text" placeholder="Enter the Language" onChange={(e) => addbook({ ...book, language:e.target.value})}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control type="text" placeholder="Enter the Author " onChange={(e)=>addbook({...book,author:e.target.value})}  />
+                  <Form.Control type="text" placeholder="Enter the Author " onChange={(e) => addbook({ ...book, author:e.target.value})}  />
         </Form.Group>
          </form>
 
