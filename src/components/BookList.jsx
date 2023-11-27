@@ -20,19 +20,30 @@ function BookList() {
   useEffect(() => {
     getalldata();
   },[])
-  const handleDelete = (id) => {
-    const confirm = window.confirm('Would  you like to Delete');
-    if (confirm) { 
-      Delete(id)
-      window.location.reload();
+
+  const handleDelete = async (id) => {
+  const confirm = window.confirm('Would you like to Delete');
+  if (confirm) {
+    try {
+      await Delete(id);
+      getalldata(); // Refresh data without reloading page
+    } catch (error) {
+      console.error("There was an error deleting the item", error);
     }
+  }
 }
   return (
     <>
       <Container fluid>
+        <div className='d-flex m-4 justify-content-center align-items-center '>
+          <h1 className=' m-4'>Book List</h1>
+          <Link to='/addbook' className='btn btn-outline-primary fs-4'>Add Book</Link>
+          </div>
+
+
         <Row className='row-div  m-4' md={12} lg={12} xl={12} >
           {data.map((d, i) => (
-            <Col sm={6} md={6} lg={4} className='p-4'>
+            <Col sm={6} md={6} lg={3} className='p-4'>
               <div className='row-col d-flex justify-content-center align-items-center'>
                 <Card style={{ width: '18rem' }}>
                   <Card.Img variant="top" src={d.imageurl} />
