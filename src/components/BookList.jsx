@@ -87,9 +87,9 @@ function BookList() {
     <Header />
       <Container fluid style={{marginTop:"160px"}}>
         <div className='d-flex justify-content-center align-items-center '>
-       <div className=''>
-            <h2 className='text-center  '>Book List</h2>
-            <button onClick={ handleShow} className='btn btn-outline-success'><b>Add Book</b></button>
+       <div className=' '>
+            <h2 className='text-center'>Book List</h2>
+            <button onClick={ handleShow} className='btn btn-outline-success '><b>Add Book</b></button>
        </div>
 
                 {/* ajay */}
