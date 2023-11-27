@@ -4,10 +4,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Edit from './components/Edit'
 import Footer from './components/Footer';
+import Header from './components/Header';
 import AddBook from './components/AddBook';
 function App() {
   return (
     <BrowserRouter>
+    <Header/>
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/booklist' element={<BookList />}></Route>

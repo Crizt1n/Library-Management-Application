@@ -1,0 +1,9 @@
+.header_out{
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff8c;
+    box-shadow: -2px -6px 9px 2px;
+}
