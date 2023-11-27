@@ -118,8 +118,8 @@ function Edit() {
                             <input type="text" className='form-control' id='author' required value={values.author} onChange={e => setValues({ ...values, author: e.target.value })} />
                             <label id='label-author' className='label-author'>Enter valid Name</label>
                             <br />
-                            <button className='btn btn-success me-2 mt-3' >Submit</button>
                             <Link to='/booklist' className="btn btn-primary mt-3">Back</Link>
+                            <button className='btn btn-success ms-2 mt-3' >Submit</button>
                         </form>
                     </Col>
                 </Row>

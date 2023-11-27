@@ -1,10 +1,13 @@
 import React from 'react'
 import './Header.css'
+import { Link } from 'react-router-dom'
 function Header() {
   return (
-    <div className="header_out">
-     <span> Library Management System</span>
-    </div>
+   <Link to={'/'}>
+      <div className="header_out bg-dark">
+      <h1 className='p-2 m-2 text-light'> <span className='container text-success'>Library</span>Management System</h1>
+      </div>
+   </Link>
   )
 }
 

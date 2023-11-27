@@ -17,6 +17,7 @@ import Form from 'react-bootstrap/Form';
 import { uploadNewBook } from '../services/allAPI';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Header from './Header';
 
 
 
@@ -83,14 +84,17 @@ function BookList() {
 
   return (
     <>
-      <Container fluid>
-        <div className='d-flex m-4 justify-content-center align-items-center '>
-          <h1 className=' m-4'>Book List</h1>
-          <button onClick={ handleShow} className='btn btn-outline-primary fs-4'>Add Book</button>
+    <Header />
+      <Container fluid style={{marginTop:"160px"}}>
+        <div className='d-flex justify-content-center align-items-center '>
+       <div className=''>
+            <h2 className='text-center  '>Book List</h2>
+            <button onClick={ handleShow} className='btn btn-outline-success'><b>Add Book</b></button>
+       </div>
 
                 {/* ajay */}
                 
-          <Modal show={show} onHide={handleClose}  backdrop="static" keyboard={false}>
+          <Modal show={show} onHide={handleClose}  backdrop="static" keyboard={false} className=''>
             <Modal.Header closeButton>
               <Modal.Title>Add Book Details</Modal.Title>
             </Modal.Header>
@@ -98,24 +102,24 @@ function BookList() {
           <p>Please fill the following details.</p>
          <form className='border border-secondary p-3 rounded'>
 
-         <Form.Group className="mb-3" controlId="formBasicEmail">
+         <Form.Group className="mb-2" controlId="formBasicEmail">
         <Form.Control type="text" placeholder="Enter the ID" onChange={(e)=>addbook({...book,id:e.target.value})} />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-2" controlId="formBasicEmail">
                   <Form.Control type="text" placeholder="Enter the image URL" onChange={(e) => addbook({ ...book,imageurl:e.target.value})}/>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-2" controlId="formBasicEmail">
                   <Form.Control type="text" placeholder="Enter the Name" onChange={(e) => addbook({ ...book,title:e.target.value})}/>
         </Form.Group>
         
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-2" controlId="formBasicEmail">
                   <Form.Control type="text" placeholder="Enter the Year of Book" onChange={(e) => addbook({ ...book, year:e.target.value})}/>
         </Form.Group>
 
       
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-2" controlId="formBasicEmail">
                   <Form.Control type="text" placeholder="Enter the Language" onChange={(e) => addbook({ ...book, language:e.target.value})}/>
         </Form.Group>
 
@@ -126,10 +130,10 @@ function BookList() {
 
         </Modal.Body>
             <Modal.Footer>
-              <Button variant="success" onClick={handleClose}>
+              <Button variant="warning" onClick={handleClose}>
                Close
               </Button>
-              <Button variant="warning" onClick={handleUpload}>Upload</Button>
+              <Button variant="success" onClick={handleUpload}>Upload</Button>
 
             </Modal.Footer>
           </Modal>
@@ -137,39 +141,39 @@ function BookList() {
           </div>
 
 
-        <Row className='row-div  m-4' md={12} lg={12} xl={12} >
+        <Row className='row-div  m-2 ' >
           {data.map((d, i) => (
-            <Col sm={6} md={6} lg={3} className='p-4'>
-              <div className='row-col d-flex justify-content-center align-items-center'>
-                <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={d.imageurl} />
-                  <Card.Body>
+            <Col sm={6} md={6} lg={4} className='p-2'>
+              <div className='row-col d-flex justify-content-center align-items-center '>
+                <Card style={{ width: '25rem' }}>
+                  <Card.Img variant="top" src={d.imageurl} style={{height:"300px"}} />
+                  <Card.Body className='text-dark'>
                     <Card.Title>{d.title}</Card.Title>
                     <Card.Text>
                       <ListGroup as="ul" >
                         <ListGroup.Item
                           as="li"
-                          className="d-flex justify-content-between align-items-start"
+                          className="d-flex justify-content-between align-items-start text-dark"
                         >
-                          <div className="ms-2 me-auto">
+                          <div className="ms-1 me-auto">
                             <div className="fw-bold">Year</div>
                             {d.year}
                           </div>
                         </ListGroup.Item>
                         <ListGroup.Item
                           as="li"
-                          className="d-flex justify-content-between align-items-start"
+                          className="d-flex justify-content-between align-items-start text-dark"
                         >
-                          <div className="ms-2 me-auto">
+                          <div className="ms-1 me-auto">
                             <div className="fw-bold">Language</div>
                             {d.language}
                           </div>
                         </ListGroup.Item>
                         <ListGroup.Item
                           as="li"
-                          className="d-flex justify-content-between align-items-start"
+                          className="d-flex justify-content-between align-items-start text-dark"
                         >
-                          <div className="ms-2 me-auto">
+                          <div className="ms-1 me-auto">
                             <div className="fw-bold">Author</div>
                             {d.author}
                           </div>
