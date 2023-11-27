@@ -6,4 +6,5 @@
     width: 100%;
     background-color: #ffffff8c;
     box-shadow: -2px -6px 9px 2px;
+    z-index: 100;
 }
