@@ -21,7 +21,7 @@ function Home() {
       <div className="d-flex justify-content-center align-items-center">
         {/* <button className="btn btn-success rounded ">Explore Now</button> */}
         
-        <Link to={`/booklist`} className='btn btn-success rounded buttonStyle'>Explore Now</Link>
+        <Link to={`/booklist`} className='btn btn-success rounded buttonStyle mb-5'>Explore Now</Link>
       </div>
     </div>
   );

@@ -3,10 +3,8 @@ import BookList from './components/BookList'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Edit from './components/Edit'
-<<<<<<< HEAD
 import Footer from './components/Footer';
 import AddBook from './components/AddBook';
->>>>>>> e3a23669b116b7de2506973f8fb29d5bf0024f17
 function App() {
   return (
     <BrowserRouter>

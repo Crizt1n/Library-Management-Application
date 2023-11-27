@@ -60,29 +60,24 @@ function BookList() {
     })
        console.log(book);
   
-    const handleUpload =async ()=>{
-      const { id, imageurl, title, year, language, author } = book
-      if (!id || !imageurl || !title || !year || !language || !author){
-        // toast.warning
-        toast.warning('please fill the form completely')
-      }
-      else{
-         const response = await uploadNewBook (book)
-         console.log(response);
-         if(response.status>=200 && response.status<300){
-          // toast.success
-           toast.success(`${response.data.title} Book has been successfully Uploaded`)
-          //to close the modal
-          // setUploadVideoStatus(response.data)
-          handleClose()
-         }
-         else{
-          console.log(response);
-          // toast.error
-          toast.error('Something went wrong . Try again later')
-         }
-      }
-     }
+       const handleUpload = async () => {
+        const { id, imageurl, title, year, language, author } = book;
+        if (!id || !imageurl || !title || !year || !language || !author) {
+          toast.warning('Please fill in all fields');
+        } else {
+          try {
+            const response = await uploadNewBook(book);
+            if (response.status >= 200 && response.status < 300) {
+              toast.success(`${response.data.title} Book has been successfully uploaded`);
+              handleClose();
+              getalldata(); // Fetch data again after successful upload
+            }
+          } catch (error) {
+            console.error('Something went wrong:', error);
+            toast.error('Something went wrong. Try again later');
+          }
+        }
+      };
 
 
 
